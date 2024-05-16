@@ -4,6 +4,10 @@ const controllerProdutos = require('../controllers/controller_produtos');
 
 const router = express.Router();
 
-router.post("/", (req, res) => res.status(201).json({}));
+router.post("/", controllerProdutos.validar, controllerProdutos.criar);
+
+router.get('/', controllerProdutos.listar)
+
+router.get('/:id', controllerProdutos.obter)
 
 module.exports = router;
