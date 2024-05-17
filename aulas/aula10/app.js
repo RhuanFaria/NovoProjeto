@@ -4,10 +4,10 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+mongoose.connect(process.env.MONGODB_URL);
+
 const routerApidocs = require('./routes/router_apidocs');
 const routerProdutos = require('./routes/router_produtos');
-
-mongoose.connect(process.env.MONGODB_URL);
 
 var app = express();
 
