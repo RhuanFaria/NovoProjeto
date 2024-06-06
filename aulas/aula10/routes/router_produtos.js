@@ -1,7 +1,7 @@
 const express = require('express');
 const validarToken = require('../middlewares/auth')
 const controllerProdutos = require('../controllers/controller_produtos');
-// const router = express.Router();
+ const router = express.Router();
 
 router.post('/', controllerProdutos.validar, controllerProdutos.criar);
 
